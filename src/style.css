@@ -14,16 +14,18 @@
 }
 
 :root, theme-light {
-  --primary-color: #409EFF;
-  --secondary-color: #35495e;
-  --text-color: #303133;
+  --primary-color: #f48cff;
+  --secondary-color: #8b8298;
+  --third-color: #fff200;
+  --text-color: #000000;
   --background-color: #ffffff;
   --shadow-color: rgba(0, 0, 0, 0.5);
 }
 
 theme-dark {
-  --primary-color: #409EFF;
-  --secondary-color: #35495e;
+  --primary-color: #f48cff;
+  --secondary-color: #8b8298;
+  --third-color: #fff200;
   --text-color: #ffffff;
   --background-color: #242424;
   --shadow-color: rgba(0, 0, 0, 0.5);
@@ -58,7 +60,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--primary-color);
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -76,6 +78,7 @@ button:focus-visible {
 
 #app {
   width: 100%;
+  height: 100%;
   margin: 0;
   text-align: center;
 }

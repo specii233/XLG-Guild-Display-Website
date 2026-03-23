@@ -1,0 +1,260 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
+const members = [
+    {
+        id: 1,
+        name: 'SetviaCube',
+        role: '会长',
+        avatar: '../../static/assets/images/MemberHeads/SetviaCube.png',
+        joinDate: '2023-01-15',
+        status: 'Active'
+    },
+    {
+        id: 2,
+        name: 'Harmme',
+        role: '副会',
+        avatar: '../../static/assets/images/MemberHeads/Harmme.png',
+        joinDate: '2023-02-20',
+        status: 'Active'
+    },
+    {
+        id: 3,
+        name: 'zhaoge12',
+        role: '副会',
+        avatar: '../../static/assets/images/MemberHeads/zhaoge12.png',
+        joinDate: '2023-03-10',
+        status: 'Active'
+    },
+    {
+        id: 4,
+        name: 'dokidoki_monika',
+        role: '副会',
+        avatar: '../../static/assets/images/MemberHeads/dokidoki_monika.png',
+        joinDate: '2023-04-05',
+        status: 'Active'
+    },
+    {
+        id: 5,
+        name: 'ayellowchicken',
+        role: '副会',
+        avatar: '../../static/assets/images/MemberHeads/ayellowchicken.png',
+        joinDate: '2023-05-01',
+        status: 'Active'
+    },
+    {
+        id: 6,
+        name: 'Apple__Pie9',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/Apple__Pie9.png',
+        joinDate: '2023-06-01',
+        status: 'Active'
+    },
+    {
+        id: 7,
+        name: 'Gr_kill',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/Gr_kill.png',
+        joinDate: '2023-06-01',
+        status: 'Active'
+    },
+    {
+        id: 8,
+        name: 'threeyears3323',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/threeyears3323.png',
+        joinDate: '2023-06-01',
+        status: 'Active'
+    },
+    {
+        id: 9,
+        name: 'hualuogege',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/hualuogege.png',
+        joinDate: '2023-06-01',
+        status: 'Active',
+    },
+    {
+        id: 10,
+        name: 'night_rxz',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/night_rxz.png',
+        joinDate: '2023-06-01',
+        status: 'Active',
+    },
+    {
+        id: 11,
+        name: 'Serralyaya',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/Serralyaya.png',
+        joinDate: '2023-06-01',
+        status: 'Active',
+    },
+    {
+        id: 12,
+        name: 'dsptx',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/dsptx.png',
+        joinDate: '2023-06-01',
+        status: 'Active',
+    },
+    {
+        id: 13,
+        name: 'Amber_Outrider',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/Amber_Outrider.png',
+        joinDate: '2023-06-01',
+        status: 'Active',
+    },
+    {
+        id: 14,
+        name: 'KasakiM',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/KasakiM.png',
+        joinDate: '2023-06-01',
+        status: 'Active',
+    },
+    {
+        id: 15,
+        name: 'Yanju_XingRen',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/Yanju_XingRen.png',
+        joinDate: '2023-06-01',
+        status: 'Active',
+    },
+    {
+        id: 16,
+        name: 'Fish_Leap',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/Fish_Leap.png',
+        joinDate: '2023-06-01',
+        status: 'Active',
+    },
+    {
+        id: 17,
+        name: 'CoorTao_UwO',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/CoorTao_UwO.png',
+        joinDate: '2023-06-01',
+        status: 'Active',
+    },
+    {
+        id: 18,
+        name: 'haolu_qwq',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/haolu_qwq.png',
+        joinDate: '2023-06-01',
+        status: 'Active',
+    },
+    {
+        id: 19,
+        name: 'ralinly',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/ralinly.png',
+        joinDate: '2023-06-01',
+        status: 'Active',
+    },
+    {
+        id: 20,
+        name: 'HOPE_XIE',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/HOPE_XIE.png',
+        joinDate: '2023-06-01',
+        status: 'Active',
+    },
+    {
+        id: 21,
+        name: 'JB_Goblin',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/JB_Goblin.png',
+        joinDate: '2023-06-01',
+        status: 'Active',
+    },
+    {
+        id: 22,
+        name: 'Captain__Thomas',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/Captain__Thomas.png',
+        joinDate: '2023-06-01',
+        status: 'Active',
+    },
+    {
+        id: 23,
+        name: 'Imagineer_rox',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/Imagineer_rox.png',
+        joinDate: '2023-06-01',
+        status: 'Active',
+    },
+    {
+        id: 24,
+        name: 'subeimo101',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/subeimo101.png',
+        joinDate: '2023-06-01',
+        status: 'Active',
+    },
+    {
+        id: 25,
+        name: 'Dav_v',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/Dav_v.png',
+        joinDate: '2023-06-01',
+        status: 'Active',
+    },
+    {
+        id: 26,
+        name: 'LG_Suika',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/LG_Suika.png',
+        joinDate: '2023-06-01',
+        status: 'Active',
+    },
+    {
+        id: 27,
+        name: 'MojitoTuT',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/MojitoTuT.png',
+        joinDate: '2023-06-01',
+        status: 'Active',
+    },
+    {
+        id: 28,
+        name: 'YUYIANG',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/YUYIANG.png',
+        joinDate: '2023-06-01',
+        status: 'Active',
+    },
+    {
+        id: 29,
+        name: 'caixuxuk',
+        role: '成员',
+        avatar: '../../static/assets/images/MemberHeads/caixuxuk.png',
+        joinDate: '2023-06-01',
+        status: 'Active',
+    }
+];
+
+const members_json = JSON.stringify(members, null, 2);
+console.log(members_json);
+
+// 构建要写入的完整文件路径（更安全的方式）
+const filePath = path.join('../../static/data/members.json');
+
+// 异步写入文件（推荐，不阻塞进程）
+fs.writeFile(filePath, members_json, 'utf8', (err) => {
+    if (err) {
+        console.error('写入文件时发生错误:', err);
+        return;
+    }
+    console.log('members.json 文件已成功保存！');
+});
+
+// 或者使用同步写入（会阻塞，直到写入完成）
+// try {
+//     fs.writeFileSync(filePath, members_json, 'utf8');
+//     console.log('members.json 文件已成功保存！');
+// } catch (err) {
+//     console.error('写入文件时发生错误:', err);
+// }

@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 html, body {
@@ -34,4 +35,19 @@ button:after {
 button:focus {
   border: 0 none;
   outline: none !important;
+}
+
+/* 隐藏滚动条但保留滚动功能 */
+::-webkit-scrollbar {
+    width: 0; /* 设置为0隐藏滚动条 */
+    height: 0;
+    background: transparent; /* 透明背景确保不占位 */
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; /* 轨道透明 */
+}
+
+::-webkit-scrollbar-thumb {
+    background: transparent; /* 滑块透明 */
 }

@@ -10,3 +10,4 @@ const app = createApp(App)
 app.use(router) // 关键：这会使$router和$route在组件中可用[6](@ref)
 app.mount('#app')
 
+

@@ -1,4 +1,3 @@
-<!-- Carousel.vue -->
 <template>
   <div class="carousel-container" @mouseenter="stopAutoPlay" @mouseleave="startAutoPlay">
     <!-- 轮播轨道：通过transform实现水平滑动 -->
@@ -18,8 +17,8 @@
     </div>
 
     <!-- 导航按钮 -->
-    <button class="carousel-btn prev" @click="prevSlide" aria-label="Previous slide">&lt;</button>
-    <button class="carousel-btn next" @click="nextSlide" aria-label="Next slide">&gt;</button>
+    <button class="carousel-btn prev" @click="prevSlide" aria-label="Previous slide">‹</button>
+    <button class="carousel-btn next" @click="nextSlide" aria-label="Next slide">›</button>
 
     <!-- 指示器（分页小圆点） -->
     <div class="carousel-indicators">
@@ -147,23 +146,30 @@ onUnmounted(() => {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: var(--background-color);
+  background: rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.38);
   border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  border-radius: 10px;
+  width: 24px;
+  height: 80px;
+  color: var(--background-color);
   cursor: pointer;
   z-index: 10;
   transition: background-color 0.3s;
 }
 .carousel-btn:hover {
   background-color: var(--background-color);
+  color: var(--text-color);
+}
+.carousel-btn:active {
+  box-shadow: inset 0 0 5px var(--shadow-color);
 }
 .carousel-btn.prev {
-  left: 15px;
+  left: 20px;
 }
 .carousel-btn.next {
-  right: 15px;
+  right: 20px;
 }
 
 .carousel-indicators {
