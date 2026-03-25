@@ -15,7 +15,7 @@
     <p>Join us for epic adventures and unforgettable moments!</p>
   </section>
   <section id="members">
-    <MemberBar />
+    <MemberBar :data-path="'../../static/data/members.json'" />
     <h2>Our Members</h2>
     <ul>
       <li>
