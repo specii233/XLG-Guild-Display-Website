@@ -4,6 +4,7 @@
     "name": "SetviaCube",
     "role": "会长",
     "avatar": "../../static/assets/images/MemberHeads/SetviaCube.png",
+    "description": "Redstone builder",
     "joinDate": "2023-01-15",
     "status": "Active"
   },

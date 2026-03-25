@@ -21,8 +21,11 @@
                             class="item-card"
                             @click="handleItemClick(item)"
                         >
-                            <h3>{{ item.name }}</h3>
-                            <p>{{ item.description }}</p>
+                            <img :src="item.avatar">
+                            <div>
+                                <h3>{{ item.name }}</h3>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -87,11 +90,11 @@ const props = defineProps({
     },
     rows: {
         type: Number,
-        default: 4,
+        default: (window.screen.width < 768) * 8 || 4,
     },
     columns: {
         type: Number,
-        default: 3,
+        default: window.screen.width < 768 || 3,
     },
     autoplay: {
         type: Boolean,
@@ -312,6 +315,7 @@ onUnmounted(() => {
 .item-card {
     background: white;
     border-radius: 8px;
+    display: flex;
     padding: 16px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -324,9 +328,17 @@ onUnmounted(() => {
 }
 
 .item-card h3 {
-    margin: 0 0 8px 0;
     font-size: 1.1rem;
     color: #333;
+}
+
+.item-card img {
+    width: 48px;
+    height: 48px;
+}
+
+.item-card div {
+    margin-left: 10px;
 }
 
 .item-card p {
